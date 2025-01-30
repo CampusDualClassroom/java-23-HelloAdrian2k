@@ -18,15 +18,15 @@ public class Exercise23 {
 
     public static Person addMapValue(Map<String, Person> map, String key, Person value) {
         map.put(key, value);
-        return value;
+        return map.get(key);
     }
 
     public static void printMapValues(Map<String, Person> map) {
-        for (Map.Entry<String, Person> parCV : map.entrySet()) {
-            System.out.println("Clave -> " + parCV.getKey());
-            System.out.println("Valor -> Objeto de tipo " + parCV.getValue().getClass().getSimpleName().toUpperCase());
+        for (Map.Entry<String, Person> entry : map.entrySet()) {
+            System.out.println("Clave -> " + entry.getKey());
+            System.out.println("Valor -> Objeto de tipo " + entry.getValue().getClass().getSimpleName().toUpperCase());
             System.out.print("GetDetails del objeto -> -> ");
-            parCV.getValue().getDetails();
+            entry.getValue().getDetails();
             System.out.println();
         }
     }
